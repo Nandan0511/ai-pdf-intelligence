@@ -1,5 +1,4 @@
 from pathlib import Path
-from turtle import st
 
 from dotenv import load_dotenv
 import os
