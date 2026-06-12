@@ -60,7 +60,6 @@ MAIN CONTAINER
 /* ==================================================
 SIDEBAR
 ================================================== */
-
 section[data-testid="stSidebar"] {
 
     width: 270px !important;
@@ -72,6 +71,10 @@ section[data-testid="stSidebar"] {
         1px solid rgba(255,255,255,0.08);
 
     backdrop-filter: blur(20px);
+
+    height: 100vh;
+
+    overflow-y: auto !important;
 }
 
 /* Sidebar Scrollbar */
@@ -596,6 +599,23 @@ MOBILE RESPONSIVE
 
         max-width: 100%;
     }
+    /* Mobile Sidebar Fix */
+
+section[data-testid="stSidebar"] {
+
+    width: 100% !important;
+
+    height: 100vh !important;
+
+    overflow-y: auto !important;
+}
+
+section[data-testid="stSidebar"] > div {
+
+    overflow-y: auto !important;
+
+    height: 100%;
+}
 
     /* Hero */
 

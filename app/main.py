@@ -29,13 +29,12 @@ from services.pdf_service import (
     process_pdf,
 )
 
-
 st.set_page_config(
     page_title="AI PDF Intelligence",
     page_icon="🤖",
     layout="wide",
+    initial_sidebar_state="collapsed"
 )
-
 
 def main():
 
