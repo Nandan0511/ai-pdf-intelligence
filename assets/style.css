@@ -63,7 +63,7 @@ SIDEBAR
 
 section[data-testid="stSidebar"] {
 
-    width: 290px !important;
+    width: 270px !important;
 
     background:
         rgba(15, 23, 42, 0.96);
@@ -116,7 +116,7 @@ HERO SECTION
 
 .hero-section {
 
-    max-width: 900px;
+    max-width: 1000px;
 
     padding-top: 20px;
 
@@ -154,7 +154,7 @@ HERO SECTION
 
 .hero-section h1 {
 
-    font-size: 68px;
+    font-size: clamp(32px, 6vw, 68px);
 
     font-weight: 800;
 
@@ -244,16 +244,11 @@ CHAT MESSAGES
 
 /* Message Content */
 
-[data-testid="stChatMessageContent"] {
-
-    padding-top: 4px;
-}
-
 [data-testid="stChatMessageContent"] p {
 
     line-height: 1.8;
 
-    font-size: 17px;
+    font-size: clamp(14px, 2vw, 16px);
 }
 
 /* ==================================================
@@ -585,4 +580,117 @@ SCROLLBAR
     font-size: 16px !important;
 
     font-weight: 400 !important;
+}
+
+/* ==================================================
+MOBILE RESPONSIVE
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .main .block-container {
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+
+        max-width: 100%;
+    }
+
+    .stChatInput input {
+
+    font-size: 16px !important;
+    }
+
+    .hero-section {
+
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+    .hero-section h1 {
+
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .hero-section p {
+
+        font-size: 15px;
+    }
+
+
+    .hero-badge {
+
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    [data-testid="stChatMessage"] {
+
+        max-width: 100%;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    [data-testid="stChatMessageContent"] {
+
+        font-size: 15px !important;
+    }
+
+    [data-testid="stChatMessageContent"] p,
+    [data-testid="stChatMessageContent"] li {
+
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    .stButton button {
+
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    [data-testid="stFileUploader"] {
+
+        padding: 12px;
+    }
+
+    .empty-state {
+
+        padding: 24px;
+        margin-top: 30px;
+    }
+
+    section[data-testid="stSidebar"] {
+
+        width: 100% !important;
+    }
+}
+
+/* Small Phones */
+
+@media screen and (max-width: 480px) {
+
+    .hero-section h1 {
+
+        font-size: 28px;
+    }
+
+    .hero-section p {
+
+        font-size: 14px;
+    }
+
+    [data-testid="stChatMessageContent"] p,
+    [data-testid="stChatMessageContent"] li {
+
+        font-size: 14px !important;
+    }
+
+    [data-testid="stChatMessage"] {
+
+        padding: 12px;
+    }
 }
