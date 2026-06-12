@@ -1,4 +1,5 @@
 streamlit
+
 openai
 
 langchain
@@ -18,3 +19,5 @@ python-dotenv
 
 numpy
 pandas
+
+protobuf==4.25.3
