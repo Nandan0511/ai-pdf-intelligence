@@ -1,0 +1,588 @@
+/*style.css*/
+
+html,
+body,
+[class*="css"] {
+
+    font-family:
+        Inter,
+        sans-serif;
+}
+
+.stApp {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #0f172a 0%,
+            #020617 45%,
+            #000814 100%
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+/* ==================================================
+REMOVE STREAMLIT DEFAULT UI
+================================================== */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
+/* ==================================================
+MAIN CONTAINER
+================================================== */
+
+.main .block-container {
+
+    max-width: 1250px;
+
+    padding-top: 1rem;
+
+    padding-left: 3rem;
+
+    padding-right: 3rem;
+
+    padding-bottom: 2rem;
+}
+
+/* ==================================================
+SIDEBAR
+================================================== */
+
+section[data-testid="stSidebar"] {
+
+    width: 290px !important;
+
+    background:
+        rgba(15, 23, 42, 0.96);
+
+    border-right:
+        1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(20px);
+}
+
+/* Sidebar Scrollbar */
+
+section[data-testid="stSidebar"]::-webkit-scrollbar {
+    width: 4px;
+}
+
+section[data-testid="stSidebar"]::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+}
+
+/* Sidebar Header */
+
+.sidebar-header h1 {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.sidebar-header p {
+
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+.sidebar-gap {
+    height: 20px;
+}
+
+/* ==================================================
+HERO SECTION
+================================================== */
+
+.hero-section {
+
+    max-width: 900px;
+
+    padding-top: 20px;
+
+    padding-bottom: 35px;
+}
+
+/* Hero Badge */
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(99,102,241,0.15);
+
+    border:
+        1px solid rgba(99,102,241,0.3);
+
+    color: #c4b5fd;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+
+    font-weight: 600;
+
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Title */
+
+.hero-section h1 {
+
+    font-size: 68px;
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 0 30px rgba(99,102,241,0.18);
+}
+
+/* Hero Subtitle */
+
+.hero-section p {
+
+    font-size: 20px;
+
+    color: #94a3b8;
+
+    max-width: 760px;
+
+    line-height: 1.7;
+}
+
+/* ==================================================
+CHAT MESSAGES
+================================================== */
+
+[data-testid="stChatMessage"] {
+
+    backdrop-filter: blur(14px);
+
+    padding: 24px;
+
+    border-radius: 24px;
+
+    margin-bottom: 18px;
+
+    max-width: 92%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    transition: 0.3s ease;
+
+    animation: fadeUp 0.4s ease;
+}
+
+/* Assistant Messages */
+
+[data-testid="stChatMessage"]:has(.assistant) {
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+}
+
+/* User Messages */
+
+[data-testid="stChatMessage"]:has(.user) {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,0.18),
+            rgba(139,92,246,0.12)
+        );
+
+    border:
+        1px solid rgba(99,102,241,0.25);
+}
+
+/* Hover Effect */
+
+[data-testid="stChatMessage"]:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Message Content */
+
+[data-testid="stChatMessageContent"] {
+
+    padding-top: 4px;
+}
+
+[data-testid="stChatMessageContent"] p {
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+/* ==================================================
+CHAT ANIMATION
+================================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0px);
+    }
+}
+
+/* ==================================================
+CHAT INPUT
+================================================== */
+
+.stChatInputContainer {
+
+    background: transparent;
+
+    border-top: none;
+
+    padding-top: 12px;
+
+    padding-bottom: 18px;
+}
+
+/* Floating Input Position */
+
+.stChatFloatingInputContainer {
+
+    bottom: 25px;
+}
+
+/* Input Wrapper */
+
+.stChatInput > div {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(14px);
+
+    padding: 8px;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 0 transparent;
+}
+
+/* Remove Red Focus Border */
+
+.stChatInput > div:focus-within {
+
+    border:
+        1px solid rgba(99,102,241,0.45);
+
+    box-shadow:
+        0 0 25px rgba(99,102,241,0.18);
+
+    outline: none !important;
+}
+
+/* Actual Input */
+
+.stChatInput input {
+
+    background: transparent !important;
+
+    border: none !important;
+
+    outline: none !important;
+
+    color: white !important;
+
+    font-size: 16px;
+}
+
+/* Placeholder */
+
+.stChatInput input::placeholder {
+
+    color:
+        rgba(255,255,255,0.45);
+}
+/* ==================================================
+BUTTONS
+================================================== */
+
+.stButton button {
+
+    width: 100%;
+
+    border-radius: 16px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    padding: 12px;
+
+    transition: 0.3s ease;
+}
+
+/* Button Hover */
+
+.stButton button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(99,102,241,0.35);
+}
+
+/* ==================================================
+FILE UPLOADER
+================================================== */
+
+[data-testid="stFileUploader"] {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.01)
+        );
+
+    border:
+        1px dashed rgba(255,255,255,0.15);
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    transition: 0.3s ease;
+}
+
+/* File Upload Hover */
+
+[data-testid="stFileUploader"]:hover {
+
+    border:
+        1px dashed rgba(99,102,241,0.5);
+
+    background:
+        rgba(99,102,241,0.05);
+}
+
+/* ==================================================
+PDF CARD
+================================================== */
+
+.pdf-card {
+
+    background:
+        rgba(99,102,241,0.12);
+
+    border:
+        1px solid rgba(99,102,241,0.25);
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    margin-top: 10px;
+
+    transition: 0.3s ease;
+}
+
+.pdf-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(99,102,241,0.18);
+}
+
+/* ==================================================
+EMPTY STATE
+================================================== */
+
+.empty-state {
+
+    margin-top: 80px;
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 28px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    backdrop-filter: blur(14px);
+}
+
+/* ==================================================
+THINKING BOX
+================================================== */
+
+.thinking-box {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* ==================================================
+SCROLLBAR
+================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border-radius: 20px;
+}
+/* Chat message text */
+
+[data-testid="stChatMessageContent"] {
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+}
+
+/* Prevent giant markdown headings */
+
+[data-testid="stChatMessageContent"] h1 {
+
+    font-size: 24px !important;
+}
+
+[data-testid="stChatMessageContent"] h2 {
+
+    font-size: 22px !important;
+}
+
+[data-testid="stChatMessageContent"] h3 {
+
+    font-size: 20px !important;
+}
+/* Normal assistant message text */
+
+[data-testid="stChatMessageContent"] {
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.7 !important;
+}
+
+[data-testid="stChatMessageContent"] p {
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+}
+
+/* Lists */
+
+[data-testid="stChatMessageContent"] li {
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+}
