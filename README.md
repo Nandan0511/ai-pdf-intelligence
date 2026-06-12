@@ -218,7 +218,7 @@ streamlit run app/main.py
 **Nandan Patel**
 
 * GitHub: https://github.com/Nandan0511
-* LinkedIn: https://linkedin.com
+* LinkedIn: https://www.linkedin.com/in/nandan0601
 
 ---
 
