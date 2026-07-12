@@ -38,9 +38,9 @@ EMBEDDING_MODEL = (
     "all-MiniLM-L6-v2"
 )
 
-CHUNK_SIZE = 1000
+CHUNK_SIZE = 600
 
-CHUNK_OVERLAP = 200
+CHUNK_OVERLAP = 100
 
 VECTOR_DB_DIR = (
     BASE_DIR / "vectorstore"
